@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package source;
+
+message SourceRequest {
+  string url = 1;
+  bool containsAiContent = 2;  // Indicates if the source may contain AI-related articles
+  bool containsAfricaContent = 3;  // Indicates if the source may contain Africa-related articles
+}

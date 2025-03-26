@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package author;
+
+
+message AuthorResponse {
+    string name = 2;
+    string url = 3;
+}
+
+message AuthorRequest {
+    string name = 2;
+    string url = 3;
+}

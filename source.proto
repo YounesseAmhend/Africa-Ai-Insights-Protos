@@ -8,10 +8,30 @@ message SourceRequest {
   bool containsAfricaContent = 3;  // Indicates if the source may contain Africa-related articles
 }
 
+message Source {
+    int32 id = 1;
+    string url = 2;
+    map<string, string> selector = 3; 
+    bool triggerAfrica = 4;
+    bool triggerAi = 5;
+    string createdAt = 6; 
+    string updatedAt = 7; 
+}
+
 message SourceResponse {
     string message = 1;
 }
 
+message ScrapeRequest {
+
+}
+
+message ScrapeResponse {
+    string message = 1;
+}
+
+
 service SourceService {
     rpc addSource (SourceRequest) returns (SourceResponse) {} 
+    rpc scrape (ScrapeRequest) returns (ScrapeResponse) {}
 }

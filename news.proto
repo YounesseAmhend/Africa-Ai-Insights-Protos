@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package news;
+
+import "protos/author.proto";
+
+message NewsAddRequest {
+    int32 id = 1;
+    int32 sourceId = 2;
+    string title = 3;
+    string url = 4;
+    int32 authorId = 5;
+    string body = 6;
+    string postDate = 7;
+    string imageUrl = 8;
+}
+
+message NewsResponse {
+    int32 id = 1;
+    string sourceUrl = 2;
+    string title = 3;
+    string url = 4;
+    author.AuthorResponse author = 5;
+    string body = 6;
+    string postDate = 7;
+    string imageUrl = 8;
+}

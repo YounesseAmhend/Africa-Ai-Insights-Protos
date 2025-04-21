@@ -2,21 +2,16 @@ syntax = "proto3";
 
 package source;
 
+// Java package options
+// option java_package = "com.yourapp.source";
+option java_outer_classname = "SourceProto";
+
 message SourceRequest {
-  string url = 1;
-  bool containsAiContent = 2;  // Indicates if the source may contain AI-related articles
-  bool containsAfricaContent = 3;  // Indicates if the source may contain Africa-related articles
+    string url = 1;
+    bool containsAiContent = 2;  // Indicates if the source may contain AI-related articles
+    bool containsAfricaContent = 3;  // Indicates if the source may contain Africa-related articles
 }
 
-message Source {
-    int32 id = 1;
-    string url = 2;
-    map<string, string> selector = 3; 
-    bool triggerAfrica = 4;
-    bool triggerAi = 5;
-    string createdAt = 6; 
-    string updatedAt = 7; 
-}
 
 message SourceResponse {
     string message = 1;
